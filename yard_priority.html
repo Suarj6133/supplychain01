@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .big-box {
+        width: 1000px;
+        height: 100px;
+        border: 2px solid #4CAF50;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Styling for the small boxes */
+    .small-box {
+        width: 70px;
+        height: 70px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 4px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yard prioritization</title>
+</head>
+<body>
+    <h1>Delhivery Planning Portal</h1>
+    <button onclick="window.location.href='vehicle_planning.html'">FM / LM Vehicle Planning</button> <button onclick="window.location.href='dock_planning.html'">Dock Planning</button> <button onclick="window.location.href='yard_priority.html'">Yard prioritization</button> 
+    <br><br>
+    This dashbaord will act as advice mechanism for the on-grond team to take actions: <br>
+    Yard prioritisation will be based on two input parameters:<br><br>
+    Priority 1- Vehicle required for rotation (user input)<br> 
+    Priority 2- Sector load on floor (from database)<br>
+    Priority 3 - Cross docking (from database)<br>
+    Priority 3- cut off time(from database) <br><br>
+    <p1> Current yard status</p1>
+    <br>
+    <div class="big-box">
+        <div class="small-box" id="v1">v1</div>
+        <div class="small-box" id="v2">v2</div>
+        <div class="small-box" id="v3">v3</div>
+        <div class="small-box" id="v4">v4</div>
+        <div class="small-box" id="v5">v5</div>
+        <div class="small-box" id="v6">v6</div>
+        <div class="small-box" id="v7">v7</div>
+    </div>
+    
+    <br>
+    <label for="dropdown">Select vehicle requried for rotation / any other priority(DC requirement / client priority / low count):</label><br>
+    <div class="vehicle-selection">
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v1"> v1
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v2"> v2
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v3"> v3
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v4"> v4
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v5"> v5
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v6"> v6
+        </label>
+        <label class="vehicle-option">
+            <input type="checkbox" name="vehicles" value="v7"> v7
+        </label>
+    </div> <br>
+    <label for="dropdown">Select count of docks to be planned for:</label>
+    <select id="dropdown_vehicle_selection" name="options">
+        <option value="option1">1</option>
+        <option value="option2">2</option>
+        <option value="option3">3</option>
+        <option value="option4">4</option>
+        <option value="option4">5</option>
+        <option value="option4">6</option>
+        <option value="option4">7</option>
+        <option value="option4">8</option>
+        <option value="option4">9</option>
+        <option value="option4">10</option>
+        <option value="option4">11</option>
+        <option value="option4">12</option>
+    </select>
+
+    <br>
+    <button>Click to generate yard priority list</button>
+    <br> clicking on generate yar priority - will give data based on these priority list
+</body>
+</html>

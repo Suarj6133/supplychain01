@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM/ LM_vehicle_Planning</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+    }
+
+    h1 {
+        text-align: center;
+        color: #D32F2F; /* Red color */
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #D32F2F; /* Red color */
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #B71C1C; /* Darker red */
+    }
+
+    label {
+        font-weight: bold;
+        color: #333; /* Dark gray for contrast */
+    }
+
+    select {
+        padding: 8px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: white;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        border: 1px solid #333; /* Black border */
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #D32F2F; /* Red color */
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tr.highlighted-row {
+        background-color: #FFEBEE; /* Light red for highlighted row */
+        font-weight: bold;
+    }
+
+    .container {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .box {
+        width: 300px;
+        height: 150px;
+        border: 2px solid #D32F2F; /* Red border */
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .small-box {
+        width: 90%;
+        padding: 8px;
+        background-color: #f4f4f4;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 4px;
+        margin-bottom: 5px;
+    }
+
+    .drag-button {
+        background-color: #D32F2F; /* Red color */
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .drag-button:hover {
+        background-color: #B71C1C; /* Darker red */
+    }
+
+    .drag-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    p {
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-left: 4px solid #D32F2F; /* Red left border */
+        margin-top: 20px;
+        font-style: italic;
+        color: #333;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>Delhivery Planning Portal</h1>
+    <button onclick="window.location.href='vehicle_planning.html'">FM / LM Vehicle Planning</button> <button onclick="window.location.href='dock_planning.html'">Dock Planning</button> <button onclick="window.location.href='yard_priority.html'">Yard prioritization</button> 
+      <br><br>
+    <label for="dropdown">Choose facility:</label>
+    <select id="dropdown" name="options">
+        <option value="option1">Ahmedabad_GW</option>
+        <option value="option2">Hyderabad_GW</option>
+        <option value="option3">Dankuni_GW</option>
+        <option value="option4">Kanpur_H</option>
+    </select>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>Unique Identification Number</th>
+                <th>PDT</th>
+                <th>Total wt</th>
+                <th>Total WBN</th>
+                <th>Lat/ Long</th>
+                <th>Distance from facility</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr draggable="true" ondragstart="drag(event)">
+                <td>123456</td>
+                <td>B2B</td>
+                <td>100</td>
+                <td>10</td>
+                <td>12.90 / 68.90</td>
+                <td>10</td>
+                <td>
+                    <button class="drag-button">Drag - Planned</button>
+                </td>
+            </tr>
+            <tr draggable="true" ondragstart="drag(event)">
+                <td>623456</td>
+                <td>B2B</td>
+                <td>120</td>
+                <td>12</td>
+                <td>12.86 / 68.80</td>
+                <td>12</td>
+                <td>
+                    <button class="drag-button">Drag - Planned</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>Click to create vehicles</h2>
+    <label for="vehicle_dropdown">Choose Vehicle:</label>
+    <select id="vehicle_dropdown" name="vehicle_options">
+        <option value="Mini Ace">Mini Ace</option>
+        <option value="Pickup Truck">Pickup Truck</option>
+        <option value="Truck 407">Truck 407</option>
+        <option value="Truck 14ft">Truck 14ft</option>
+        <option value="Truck 17ft">Truck 17ft</option>
+        <option value="Truck 20ft">Truck 20ft</option>
+        <option value="Truck 22ft">Truck 22ft</option>
+        <option value="Truck 24ft">Truck 24ft</option>
+        <option value="Truck 30ft">Truck 30ft</option>
+    </select>
+    <button onclick="addBox()">Click to add</button>
+
+    <!-- Container to hold the created boxes -->
+    <div class="container" id="box-container"></div>
+
+    <script>
+        function addBox() {
+            const dropdown = document.getElementById('vehicle_dropdown');
+            const selectedOption = dropdown.options[dropdown.selectedIndex].value;
+
+            const box = document.createElement('div');
+            box.className = 'box';
+            box.setAttribute('ondrop', 'drop(event)');
+            box.setAttribute('ondragover', 'allowDrop(event)');
+
+            const smallBox = document.createElement('div');
+            smallBox.className = 'small-box';
+            smallBox.textContent = selectedOption;
+
+            const uniqueItems = document.createElement('div');
+            uniqueItems.className = 'small-box';
+            uniqueItems.textContent = 'UID: -';
+
+            const totalWeight = document.createElement('div');
+            totalWeight.className = 'small-box';
+            totalWeight.textContent = 'Total Weight: 0';
+
+            const totalUtiliz = document.createElement('div');
+            totalUtiliz.className = 'small-box';
+            totalUtiliz.textContent = 'Total Utilisation: 0';
+
+            box.appendChild(smallBox);
+            box.appendChild(uniqueItems);
+            box.appendChild(totalWeight);
+            box.appendChild(totalUtiliz);
+
+            document.getElementById('box-container').appendChild(box);
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drag(event) {
+            const row = event.target.closest('tr');
+            event.dataTransfer.setData('text', JSON.stringify({
+                uid: row.cells[0].textContent,
+                weight: parseInt(row.cells[2].textContent)
+            }));
+            event.dataTransfer.setData('rowId', row.rowIndex); // Save row index for highlighting
+        }
+
+        function drop(event) {
+            event.preventDefault();
+
+            const data = JSON.parse(event.dataTransfer.getData('text'));
+            const rowId = event.dataTransfer.getData('rowId');
+            const targetBox = event.target.closest('.box');
+
+            const uidDiv = targetBox.querySelectorAll('.small-box')[1];
+            const weightDiv = targetBox.querySelectorAll('.small-box')[2];
+            const vehutiliz = targetBox.querySelectorAll('.small-box')[3];
+
+            const currentUID = uidDiv.textContent === 'UID: -' ? '' : uidDiv.textContent.split(': ')[1];
+            const currentWeight = parseInt(weightDiv.textContent.split(': ')[1]);
+
+            uidDiv.textContent = `UID: ${currentUID ? currentUID + ', ' : ''}${data.uid}`;
+            weightDiv.textContent = `Total Weight: ${currentWeight + data.weight}`;
+
+            const table = document.querySelector('table');
+            const row = table.rows[rowId];
+
+            // Highlight the processed row
+            row.classList.add('highlighted-row');
+
+            // Disable the drag button
+            const dragButton = row.querySelector('.drag-button');
+            if (dragButton) {
+                dragButton.remove(); // Remove the button
+            }
+        }
+    </script>
+
+    <br> <br>
+    <p>logic for <b>Unique Identification Number</b> (UIN): Since the pickup points are unique touch points, thus UIN will be prioritise as (i) 1st Priority  = LR number (as shipments against these will have same coordinates) (ii) 2nd priority- MWN(every masters + child will be delivered to same location) (iii) 3rd priority - WBN </p>
+</body>
+</html>

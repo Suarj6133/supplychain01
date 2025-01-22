@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dock Planning</title>
+    <style>
+        /* Flex container to place the tables side by side */
+        .table-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Styling for the tables */
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delhivery Planning Portal</h1>
+    <button onclick="window.location.href='vehicle_planning.html'">FM / LM Vehicle Planning</button> <button onclick="window.location.href='dock_planning.html'">Dock Planning</button> <button onclick="window.location.href='yard_priority.html'">Yard prioritization</button> 
+    <br><br>
+
+    <label for="dropdown">Choose facility:</label>
+    <select id="dropdown" name="options">
+        <option value="option1">Ahmedabad_GW</option>
+        <option value="option2">Hyderabad_GW</option>
+        <option value="option3">Dankuni_GW</option>
+        <option value="option4">Kanpur_H</option>
+    </select>
+    <br><br>
+    <div class="table-container">
+        <!-- Outbound Dock Planning Table -->
+        <div>
+            <h2>Outbound Dock Planning</h2>
+            <table>
+                <tr>
+                    <th>Hour Bracket</th>
+                    <th>FTL Outbound</th>
+                    <th>Carting Outbound</th>
+                </tr>
+                <tr>
+                    <td>00:00 - 01:00</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>01:00 - 02:00</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>02:00 - 03:00</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>03:00 - 04:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>04:00 - 05:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>05:00 - 06:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>06:00 - 07:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>07:00 - 08:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>08:00 - 09:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 12:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 14:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 15:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>15:00 - 16:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>16:00 - 17:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>17:00 - 18:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>18:00 - 19:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>19:00 - 20:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>20:00 - 21:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>21:00 - 22:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>22:00 - 23:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>23:00 - 00:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Inbound Dock Planning Table -->
+        <div>
+            <h2>Inbound Dock Planning</h2>
+            <table>
+                <tr>
+                    <th>Hour Bracket</th>
+                    <th>FTL Inbound</th>
+                    <th>Carting Inbound</th>
+                </tr>
+                <tr>
+                    <td>00:00 - 01:00</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>01:00 - 02:00</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>02:00 - 03:00</td>
+                    <td>7</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>03:00 - 04:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>04:00 - 05:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>05:00 - 06:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>06:00 - 07:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>07:00 - 08:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>08:00 - 09:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 12:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 14:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 15:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>15:00 - 16:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>16:00 - 17:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>17:00 - 18:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>18:00 - 19:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>19:00 - 20:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>20:00 - 21:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>21:00 - 22:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>22:00 - 23:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>23:00 - 00:00</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+            </table>
+        </div>
+        <!-- Logic set -->
+        <div>
+            <h2>Logic set</h2>
+            <p1> for outbound dock_ time for loading=  min(( vehicle bag capacity / 300) or (shipment in facility(p0+p1) / 300)). Say this comes out to be 2.5 hrs(next round figure 3 hrs). With this data based and cutoff timing in drhub, dock will be occupied for 3 hours before cutt off departure. Hence if the cut off departure is 5AM. then dock will be occuped in 2-3 | 3-4 | 4-5 hours brackets. here detialed bifurcation can be taken for B2B/ Heavy / B2C </p1>
+            <br> <br>
+            <p2>For inbound dock_ time for loading =  bags in trip / 300 </p2>
+        </div>
+    </div>
+</body>
+</html>
